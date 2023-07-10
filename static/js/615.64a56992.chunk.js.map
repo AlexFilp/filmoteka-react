@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/615.64a56992.chunk.js","mappings":"yIAIA,UAJkB,WAChB,OAAOA,EAAAA,EAAAA,KAAA,MAAAC,SAAI,aACb,C","sources":["Pages/QueuePage/QueuePage.jsx"],"sourcesContent":["const QueuePage = () => {\n  return <h1>QueuePage</h1>;\n};\n\nexport default QueuePage;\n"],"names":["_jsx","children"],"sourceRoot":""}

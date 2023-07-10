@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_template=self.webpackChunkreact_template||[]).push([[880],{880:function(e,t,a){a.r(t);var r=a(184);t.default=function(){return(0,r.jsx)("h1",{children:"LibraryPage"})}}}]);
-//# sourceMappingURL=880.ef40f4c1.chunk.js.map
