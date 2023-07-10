@@ -1,25 +1,77 @@
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
+// MAINPAGE
 import mobileImg from '../../images/mainPage/main-image-mobile.jpg';
 import mobileImgx2 from '../../images/mainPage/main-image-mobile-x2.jpg';
+import tabletImg from '../../images/mainPage/main-image-tablet.jpg';
+import tabletImgx2 from '../../images/mainPage/main-image-tablet-x2.jpg';
+import deskImg from '../../images/mainPage/main-image-desk.jpg';
+import deskImgx2 from '../../images/mainPage/main-iamge-desk-x2.jpg';
+// LIBRARY
+import libraryMobileImg from '../../images/library/library-image-mobile.jpg';
+import libraryMobileImgx2 from '../../images/library/library-image-mobile-x2.jpg';
+import libraryTabletImg from '../../images/library/library-image-tablet.jpg';
+import libraryTabletImgx2 from '../../images/library/library-image-tablet-x2.jpg';
+import libraryDeskImg from '../../images/library/library-image-desktop.jpg';
+import libraryDeskImgx2 from '../../images/library/library-image-desktop-x2.jpg';
 
 export const Header = styled.header`
   padding-top: 40px;
   padding-bottom: 92px;
-  background-image: url(${mobileImg});
+  background-image: ${({ isLibraryLocation }) =>
+    isLibraryLocation ? `url(${libraryMobileImg})` : `url(${mobileImg})`};
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  height: 230px;
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+    background-image: ${({ isLibraryLocation }) =>
+      isLibraryLocation ? `url(${libraryTabletImg})` : `url(${tabletImg})`};
+    height: 216px;
+    padding-bottom: 81px;
+  }
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
+    background-image: ${({ isLibraryLocation }) =>
+      isLibraryLocation ? `url(${libraryDeskImg})` : `url(${deskImg})`};
+  }
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url(${mobileImgx2});
+    background-image: ${({ isLibraryLocation }) =>
+      isLibraryLocation ? `url(${libraryMobileImgx2})` : `url(${mobileImgx2})`};
+
+    @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+      background-image: ${({ isLibraryLocation }) =>
+        isLibraryLocation
+          ? `url(${libraryTabletImgx2})`
+          : `url(${tabletImgx2})`};
+    }
+
+    @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
+      background-image: ${({ isLibraryLocation }) =>
+        isLibraryLocation ? `url(${libraryDeskImgx2})` : `url(${deskImgx2})`};
+      padding-bottom: 80px;
+    }
   }
 `;
 
 export const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
+  max-width: 320px;
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+    max-width: 768px;
+    padding: 0 33px;
+  }
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
+    max-width: 1280px;
+    padding: 0 32px;
+  }
 `;
 
 export const NavContainer = styled.div`
@@ -64,16 +116,18 @@ export const NaviLink = styled(NavLink)`
 export const LogoLink = styled(Link)`
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   gap: 8px;
   transition: transform ${p => p.theme.transition};
   &:hover,
   &:focus {
-    transform: scale(1.1);
+    svg {
+      transform: scale(1.2);
+    }
   }
 `;
 
-export const Svg = styled.svg`
+export const LogoSvg = styled.svg`
   fill: transparent;
   stroke: ${p => p.theme.colors.primaryColor};
   transition: transform ${p => p.theme.transition};
@@ -94,19 +148,25 @@ export const Span = styled.p`
 export const Form = styled.form`
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
   margin-top: 54px;
-  width: 280px;
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+    margin-top: 40px;
+    width: 336px;
+  }
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
+    margin-top: 41px;
+    width: 394px;
+  }
 `;
 
 export const Input = styled.input`
-  padding-left: 5px;
-  padding-right: 20px;
-  padding-bottom: 4px;
+  padding: 0 20px 4px 5px;
   width: 100%;
   background-color: transparent;
+
   border: none;
   outline: none;
   border-bottom: 1px solid #ffffff;
@@ -132,13 +192,15 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   position: absolute;
-  top: 2px;
-  right: -5px;
+  padding: 7px;
+  top: -4px;
+  right: -6px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `;
 
 export const SearchSvg = styled.svg`
@@ -154,4 +216,49 @@ export const ErrText = styled.p`
   font-family: ${p => p.theme.fonts.roboto};
   font-size: 14px;
   font-weight: 400;
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+    width: 420px;
+    bottom: -30px;
+    left: -40px;
+  }
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
+    left: -11px;
+  }
+`;
+
+export const BtnList = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 66px auto 0;
+`;
+
+export const Btn = styled.button`
+  width: 130px;
+  height: 44px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid ${p => p.theme.colors.primaryColor};
+
+  color: ${p => p.theme.colors.primaryColor};
+
+  font-family: ${p => p.theme.fonts.roboto};
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+
+  transition: background-color ${p => p.theme.transition},
+    border-color ${p => p.theme.transition},
+    transform ${p => p.theme.transition}, filter ${p => p.theme.transition};
+
+  &:hover,
+  &:focus {
+    filter: ${p => p.theme.filter};
+    transform: scale(1.1);
+    background-color: ${p => p.theme.colors.accentColor};
+    border-color: transparent;
+  }
 `;

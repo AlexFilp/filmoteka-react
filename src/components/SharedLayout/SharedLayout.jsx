@@ -8,7 +8,7 @@ import {
   Header,
   LinkList,
   LinkItem,
-  Svg,
+  LogoSvg,
   NaviLink,
   LogoLink,
   Span,
@@ -17,10 +17,12 @@ import {
   Button,
   SearchSvg,
   ErrText,
+  BtnList,
+  Btn,
 } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
-  const [libraryLocation, setLibraryLocation] = useState(false);
+  const [isLibraryLocation, setIsLibraryLocation] = useState(false);
   const [error] = useState(false);
 
   const { isMobile } = useResponse();
@@ -28,21 +30,21 @@ export const SharedLayout = () => {
 
   useEffect(() => {
     if (location.pathname === '/library') {
-      setLibraryLocation(true);
+      setIsLibraryLocation(true);
     } else {
-      setLibraryLocation(false);
+      setIsLibraryLocation(false);
     }
   }, [location]);
 
   return (
     <>
-      <Header>
+      <Header isLibraryLocation={isLibraryLocation}>
         <Container>
           <NavContainer>
             <LogoLink to="/">
-              <Svg width="24" height="24">
+              <LogoSvg width="24" height="24">
                 <use href={sprite + '#icon-film'}></use>
-              </Svg>
+              </LogoSvg>
               {!isMobile && <Span>Filmoteka</Span>}
             </LogoLink>
             <LinkList>
@@ -54,7 +56,16 @@ export const SharedLayout = () => {
               </LinkItem>
             </LinkList>
           </NavContainer>
-          {!libraryLocation && (
+          {isLibraryLocation ? (
+            <BtnList>
+              <li>
+                <Btn type="button">WATCHED</Btn>
+              </li>
+              <li>
+                <Btn type="button">QUEUE</Btn>
+              </li>
+            </BtnList>
+          ) : (
             <Form>
               <Input type="text" placeholder="Movie search" />
               <Button type="submit">
@@ -62,7 +73,7 @@ export const SharedLayout = () => {
                   <use href={sprite + '#icon-search'}></use>
                 </SearchSvg>
               </Button>
-              {error && (
+              {!error && (
                 <ErrText>
                   Search result not successful. Enter the correct movie name
                   please!
