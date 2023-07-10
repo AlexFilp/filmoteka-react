@@ -1,57 +1,44 @@
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
-// MAINPAGE
+
 import mobileImg from '../../images/mainPage/main-image-mobile.jpg';
 import mobileImgx2 from '../../images/mainPage/main-image-mobile-x2.jpg';
 import tabletImg from '../../images/mainPage/main-image-tablet.jpg';
 import tabletImgx2 from '../../images/mainPage/main-image-tablet-x2.jpg';
 import deskImg from '../../images/mainPage/main-image-desk.jpg';
 import deskImgx2 from '../../images/mainPage/main-iamge-desk-x2.jpg';
-// LIBRARY
-import libraryMobileImg from '../../images/library/library-image-mobile.jpg';
-import libraryMobileImgx2 from '../../images/library/library-image-mobile-x2.jpg';
-import libraryTabletImg from '../../images/library/library-image-tablet.jpg';
-import libraryTabletImgx2 from '../../images/library/library-image-tablet-x2.jpg';
-import libraryDeskImg from '../../images/library/library-image-desktop.jpg';
-import libraryDeskImgx2 from '../../images/library/library-image-desktop-x2.jpg';
 
 export const Header = styled.header`
   padding-top: 40px;
   padding-bottom: 92px;
-  background-image: ${({ selected }) =>
-    selected ? `url(${libraryMobileImg})` : `url(${mobileImg})`};
+  background-image: url(${mobileImg});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 230px;
 
   @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
-    background-image: ${({ selected }) =>
-      selected ? `url(${libraryTabletImg})` : `url(${tabletImg})`};
+    background-image: url(${tabletImg});
     height: 219px;
     padding-bottom: 81px;
   }
 
   @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
-    background-image: ${({ selected }) =>
-      selected ? `url(${libraryDeskImg})` : `url(${deskImg})`};
+    background-image: url(${deskImg});
     height: 216px;
   }
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: ${({ selected }) =>
-      selected ? `url(${libraryMobileImgx2})` : `url(${mobileImgx2})`};
+    background-image: url(${mobileImgx2});
 
     @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
-      background-image: ${({ selected }) =>
-        selected ? `url(${libraryTabletImgx2})` : `url(${tabletImgx2})`};
+      background-image: url(${tabletImgx2});
     }
 
     @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
-      background-image: ${({ selected }) =>
-        selected ? `url(${libraryDeskImgx2})` : `url(${deskImgx2})`};
+      background-image: url(${deskImgx2});
       padding-bottom: 80px;
     }
   }
@@ -227,92 +214,92 @@ export const ErrText = styled.p`
   }
 `;
 
-export const BtnList = styled.ul`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin: 66px auto 0;
+// export const BtnList = styled.ul`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 20px;
+//   margin: 66px auto 0;
 
-  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
-    gap: 32px;
-    margin: 37px auto 0;
-  }
-`;
+//   @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+//     gap: 32px;
+//     margin: 37px auto 0;
+//   }
+// `;
 
-export const WatchedLink = styled(NavLink)`
-  width: 130px;
-  height: 44px;
-  border-radius: 5px;
-  padding: 0;
+// export const WatchedLink = styled(NavLink)`
+//   width: 130px;
+//   height: 44px;
+//   border-radius: 5px;
+//   padding: 0;
 
-  font-family: ${p => p.theme.fonts.roboto};
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
+//   font-family: ${p => p.theme.fonts.roboto};
+//   font-size: 12px;
+//   font-weight: 500;
+//   line-height: 16px;
 
-  color: ${p => p.theme.colors.primaryColor};
+//   color: ${p => p.theme.colors.primaryColor};
 
-  transition: background-color ${p => p.theme.transition},
-    border-color ${p => p.theme.transition},
-    transform ${p => p.theme.transition}, filter ${p => p.theme.transition};
-  background-color: ${({ selected }) => (selected ? '#FF6B01' : 'transparent')};
-  border: 1px solid ${({ selected }) => (selected ? 'transparent' : '#ffffff')};
+//   transition: background-color ${p => p.theme.transition},
+//     border-color ${p => p.theme.transition},
+//     transform ${p => p.theme.transition}, filter ${p => p.theme.transition};
+//   background-color: ${({ selected }) => (selected ? '#FF6B01' : 'transparent')};
+//   border: 1px solid ${({ selected }) => (selected ? 'transparent' : '#ffffff')};
 
-  filter: ${({ selected }) =>
-    selected ? 'drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6))' : 'none'};
+//   filter: ${({ selected }) =>
+//     selected ? 'drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6))' : 'none'};
 
-  &:hover,
-  &:focus,
-  &.active {
-    filter: ${p => p.theme.filter};
-    background-color: ${p => p.theme.colors.accentColor};
-    border-color: transparent;
-  }
+//   &:hover,
+//   &:focus,
+//   &.active {
+//     filter: ${p => p.theme.filter};
+//     background-color: ${p => p.theme.colors.accentColor};
+//     border-color: transparent;
+//   }
 
-  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
-    width: 152px;
-  }
+//   @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+//     width: 152px;
+//   }
 
-  @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
-    width: 148px;
-  }
-`;
+//   @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
+//     width: 148px;
+//   }
+// `;
 
-export const QueueLink = styled(NavLink)`
-  width: 130px;
-  height: 44px;
-  border-radius: 5px;
+// export const QueueLink = styled(NavLink)`
+//   width: 130px;
+//   height: 44px;
+//   border-radius: 5px;
 
-  font-family: ${p => p.theme.fonts.roboto};
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
+//   font-family: ${p => p.theme.fonts.roboto};
+//   font-size: 12px;
+//   font-weight: 500;
+//   line-height: 16px;
 
-  color: ${p => p.theme.colors.primaryColor};
+//   color: ${p => p.theme.colors.primaryColor};
 
-  transition: background-color ${p => p.theme.transition},
-    border-color ${p => p.theme.transition},
-    transform ${p => p.theme.transition}, filter ${p => p.theme.transition};
-  background-color: ${({ selected }) => (selected ? '#FF6B01' : 'transparent')};
-  border: 1px solid ${({ selected }) => (selected ? 'transparent' : '#ffffff')};
+//   transition: background-color ${p => p.theme.transition},
+//     border-color ${p => p.theme.transition},
+//     transform ${p => p.theme.transition}, filter ${p => p.theme.transition};
+//   background-color: ${({ selected }) => (selected ? '#FF6B01' : 'transparent')};
+//   border: 1px solid ${({ selected }) => (selected ? 'transparent' : '#ffffff')};
 
-  filter: ${({ selected }) =>
-    selected ? 'drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6))' : 'none'};
+//   filter: ${({ selected }) =>
+//     selected ? 'drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6))' : 'none'};
 
-  &:hover,
-  &:focus,
-  &.active {
-    filter: ${p => p.theme.filter};
-    background-color: ${p => p.theme.colors.accentColor};
-    border-color: transparent;
-  }
+//   &:hover,
+//   &:focus,
+//   &.active {
+//     filter: ${p => p.theme.filter};
+//     background-color: ${p => p.theme.colors.accentColor};
+//     border-color: transparent;
+//   }
 
-  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
-    width: 152px;
-  }
+//   @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+//     width: 152px;
+//   }
 
-  @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
-    width: 148px;
-  }
-`;
+//   @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
+//     width: 148px;
+//   }
+// `;

@@ -18,33 +18,36 @@ import {
   SearchSvg,
   ErrText,
   BtnList,
-  WatchedBtn,
-  QueueBtn,
+  WatchedLink,
+  QueueLink,
 } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   const [isLibraryLocation, setIsLibraryLocation] = useState(false);
-  const [currentPage, setCurrentPage] = useState('watched');
   const [error] = useState(false);
 
   const { isMobile } = useResponse();
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === '/library') {
+    if (
+      location.pathname === '/library' ||
+      location.pathname === '/library/watched' ||
+      location.pathname === '/library/queue'
+    ) {
       setIsLibraryLocation(true);
     } else {
       setIsLibraryLocation(false);
     }
   }, [location]);
 
-  const handleWathedPage = () => {
-    setCurrentPage('watched');
-  };
+  // const handleWathedPage = () => {
+  //   setCurrentPage('watched');
+  // };
 
-  const handleQueuePage = () => {
-    setCurrentPage('queue');
-  };
+  // const handleQueuePage = () => {
+  //   setCurrentPage('queue');
+  // };
 
   return (
     <>
@@ -62,29 +65,23 @@ export const SharedLayout = () => {
                 <NaviLink to={'/'}>HOME</NaviLink>
               </LinkItem>
               <LinkItem>
-                <NaviLink to={'/library'}>MY LIBRARY</NaviLink>
+                <NaviLink to={'/library/watched'} selected={isLibraryLocation}>
+                  MY LIBRARY
+                </NaviLink>
               </LinkItem>
             </LinkList>
           </NavContainer>
           {isLibraryLocation ? (
             <BtnList>
               <li>
-                <WatchedBtn
-                  type="button"
-                  onClick={handleWathedPage}
-                  selected={currentPage === 'watched'}
-                >
+                <WatchedLink type="button" to="/library/watched">
                   WATCHED
-                </WatchedBtn>
+                </WatchedLink>
               </li>
               <li>
-                <QueueBtn
-                  type="button"
-                  onClick={handleQueuePage}
-                  selected={currentPage === 'queue'}
-                >
+                <QueueLink type="button" to="/library/queue">
                   QUEUE
-                </QueueBtn>
+                </QueueLink>
               </li>
             </BtnList>
           ) : (
