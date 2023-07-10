@@ -13,6 +13,6 @@ export const theme = {
   fonts: {
     roboto: 'Roboto',
   },
-  filter: 'drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));',
+  filter: 'drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6))',
   transition: '250ms ease-in-out',
 };

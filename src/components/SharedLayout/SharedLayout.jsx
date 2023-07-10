@@ -18,11 +18,13 @@ import {
   SearchSvg,
   ErrText,
   BtnList,
-  Btn,
+  WatchedBtn,
+  QueueBtn,
 } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   const [isLibraryLocation, setIsLibraryLocation] = useState(false);
+  const [currentPage, setCurrentPage] = useState('watched');
   const [error] = useState(false);
 
   const { isMobile } = useResponse();
@@ -36,9 +38,17 @@ export const SharedLayout = () => {
     }
   }, [location]);
 
+  const handleWathedPage = () => {
+    setCurrentPage('watched');
+  };
+
+  const handleQueuePage = () => {
+    setCurrentPage('queue');
+  };
+
   return (
     <>
-      <Header isLibraryLocation={isLibraryLocation}>
+      <Header selected={isLibraryLocation}>
         <Container>
           <NavContainer>
             <LogoLink to="/">
@@ -59,10 +69,22 @@ export const SharedLayout = () => {
           {isLibraryLocation ? (
             <BtnList>
               <li>
-                <Btn type="button">WATCHED</Btn>
+                <WatchedBtn
+                  type="button"
+                  onClick={handleWathedPage}
+                  selected={currentPage === 'watched'}
+                >
+                  WATCHED
+                </WatchedBtn>
               </li>
               <li>
-                <Btn type="button">QUEUE</Btn>
+                <QueueBtn
+                  type="button"
+                  onClick={handleQueuePage}
+                  selected={currentPage === 'queue'}
+                >
+                  QUEUE
+                </QueueBtn>
               </li>
             </BtnList>
           ) : (
