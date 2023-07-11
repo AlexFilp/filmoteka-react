@@ -9,9 +9,9 @@ import {
   LogoLink,
   LogoSvg,
   Span,
-} from './Nav.styled';
+} from './LibraryNav.styled';
 
-export const Nav = () => {
+export const LibraryNav = () => {
   const { isMobile } = useResponse();
   return (
     <NavContainer>

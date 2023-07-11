@@ -25,6 +25,15 @@ export const MainLink = styled(NavLink)`
   font-size: 12px;
   font-weight: 500;
   transition: color ${p => p.theme.transition};
+`;
+
+export const LibraryLink = styled(NavLink)`
+  position: relative;
+  color: ${p => p.theme.colors.primaryColor};
+  font-family: ${p => p.theme.fonts.roboto};
+  font-size: 12px;
+  font-weight: 500;
+  transition: color ${p => p.theme.transition};
 
   &::after {
     position: absolute;
@@ -36,15 +45,6 @@ export const MainLink = styled(NavLink)`
     height: 3px;
     background-color: ${p => p.theme.colors.underlineColor};
   }
-`;
-
-export const LibraryLink = styled(NavLink)`
-  position: relative;
-  color: ${p => p.theme.colors.primaryColor};
-  font-family: ${p => p.theme.fonts.roboto};
-  font-size: 12px;
-  font-weight: 500;
-  transition: color ${p => p.theme.transition};
 `;
 
 export const LogoLink = styled(Link)`
@@ -65,6 +65,10 @@ export const LogoSvg = styled.svg`
   fill: transparent;
   stroke: ${p => p.theme.colors.primaryColor};
   transition: transform ${p => p.theme.transition};
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
 `;
 
 export const Span = styled.p`
