@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/filmoteka-react/static/css/main.7afac80d.css",
-    "main.js": "/filmoteka-react/static/js/main.4b9945c0.js",
-    "static/js/132.d57dbc84.chunk.js": "/filmoteka-react/static/js/132.d57dbc84.chunk.js",
-    "static/js/863.2401e1ba.chunk.js": "/filmoteka-react/static/js/863.2401e1ba.chunk.js",
+    "main.js": "/filmoteka-react/static/js/main.660160ef.js",
+    "static/js/132.1fb0e4e1.chunk.js": "/filmoteka-react/static/js/132.1fb0e4e1.chunk.js",
+    "static/js/863.e55263fc.chunk.js": "/filmoteka-react/static/js/863.e55263fc.chunk.js",
     "static/js/156.4631005d.chunk.js": "/filmoteka-react/static/js/156.4631005d.chunk.js",
     "static/js/245.37215de5.chunk.js": "/filmoteka-react/static/js/245.37215de5.chunk.js",
     "static/js/615.64a56992.chunk.js": "/filmoteka-react/static/js/615.64a56992.chunk.js",
@@ -25,9 +25,9 @@
     "static/media/sprite.svg": "/filmoteka-react/static/media/sprite.c2a8eb40214fd86103f5595d943074e2.svg",
     "index.html": "/filmoteka-react/index.html",
     "main.7afac80d.css.map": "/filmoteka-react/static/css/main.7afac80d.css.map",
-    "main.4b9945c0.js.map": "/filmoteka-react/static/js/main.4b9945c0.js.map",
-    "132.d57dbc84.chunk.js.map": "/filmoteka-react/static/js/132.d57dbc84.chunk.js.map",
-    "863.2401e1ba.chunk.js.map": "/filmoteka-react/static/js/863.2401e1ba.chunk.js.map",
+    "main.660160ef.js.map": "/filmoteka-react/static/js/main.660160ef.js.map",
+    "132.1fb0e4e1.chunk.js.map": "/filmoteka-react/static/js/132.1fb0e4e1.chunk.js.map",
+    "863.e55263fc.chunk.js.map": "/filmoteka-react/static/js/863.e55263fc.chunk.js.map",
     "156.4631005d.chunk.js.map": "/filmoteka-react/static/js/156.4631005d.chunk.js.map",
     "245.37215de5.chunk.js.map": "/filmoteka-react/static/js/245.37215de5.chunk.js.map",
     "615.64a56992.chunk.js.map": "/filmoteka-react/static/js/615.64a56992.chunk.js.map",
@@ -35,6 +35,6 @@
   },
   "entrypoints": [
     "static/css/main.7afac80d.css",
-    "static/js/main.4b9945c0.js"
+    "static/js/main.660160ef.js"
   ]
 }
