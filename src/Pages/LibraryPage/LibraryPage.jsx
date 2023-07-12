@@ -3,7 +3,9 @@ import { Suspense } from 'react';
 import { Loader } from '../../components/Loader/Loader';
 import { ButtonList } from '../../components/Library/ButtonList/ButtonList';
 import { LibraryNav } from '../../components/Library/LibraryNav/LibraryNav';
-import { Container, Header } from './LibraryPage.styled';
+import { Container } from '../../components/Container/Container';
+import { Header } from './LibraryPage.styled';
+import { Footer } from '../../components/Footer/Footer';
 
 const LibraryPage = () => {
   return (
@@ -17,6 +19,7 @@ const LibraryPage = () => {
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
+      <Footer />
     </>
   );
 };

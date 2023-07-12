@@ -4,6 +4,11 @@ export const theme = {
     secondaryColor: '#000000',
     accentColor: '#FF6B01',
     underlineColor: '#FF001B',
+    footerTextColor: `#545454`,
+  },
+  backgroundColor: {
+    mainBg: '#ffffff',
+    footerBg: '#F7F7F7;',
   },
   breakpoints: {
     mobile: '320px',
