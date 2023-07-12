@@ -7,13 +7,18 @@ export const FooterField = styled.footer`
   width: 100%;
   height: 100px;
   background-color: ${p => p.theme.backgroundColor.footerBg};
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+    height: 79px;
+  }
 `;
 
 export const TextWrapper = styled.div`
+  padding-top: 28px;
+  padding-bottom: 28px;
   height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
 export const Text = styled.p`
