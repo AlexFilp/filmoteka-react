@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
 export const FooterField = styled.footer`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   height: 100px;
   background-color: ${p => p.theme.backgroundColor.footerBg};
 
