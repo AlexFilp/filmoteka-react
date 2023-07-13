@@ -1,5 +1,12 @@
+import { Container } from '../../components/Container/Container';
+import { NoFilms } from '../../components/NoFilms/NoFilms';
+
 const QueuePage = () => {
-  return <h1>QueuePage</h1>;
+  return (
+    <Container>
+      <NoFilms />
+    </Container>
+  );
 };
 
 export default QueuePage;

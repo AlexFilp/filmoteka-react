@@ -48,3 +48,14 @@ export const FilmsListFooterWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+
+export const Main = styled.main`
+  padding-top: 20px;
+  padding-bottom: 40px;
+  flex-grow: 1;
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+`;

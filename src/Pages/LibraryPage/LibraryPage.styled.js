@@ -57,3 +57,18 @@ export const Container = styled.div`
     max-width: 1280px;
   }
 `;
+
+export const Main = styled.main`
+  flex-grow: 1;
+`;
+
+export const Section = styled.section`
+  flex-grow: 1;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+`;

@@ -1,6 +1,6 @@
 import { Nav } from '../../components/Main/Nav/Nav';
 import { Search } from '../../components/Main/SearchForm/Search';
-import { Header } from './MainPage.styled';
+import { Header, Main } from './MainPage.styled';
 import { Footer } from '../../components/Footer/Footer';
 import { Container } from '../../components/Container/Container';
 import { FilmsList } from '../../components/FilmsList/FilmsList';
@@ -14,10 +14,14 @@ const MainPage = () => {
           <Search />
         </Container>
       </Header>
-      <FilmsList />
+      <Main>
+        <FilmsList />
+      </Main>
       <Footer />
     </>
   );
 };
+
+<p class="text">ТЫ ПИДОР</p>;
 
 export default MainPage;

@@ -1,5 +1,12 @@
+import { Container } from '../../components/Container/Container';
+import { NoFilms } from '../../components/NoFilms/NoFilms';
+
 const WatchedPage = () => {
-  return <h1>WatchedPage</h1>;
+  return (
+    <Container>
+      <NoFilms />
+    </Container>
+  );
 };
 
 export default WatchedPage;
