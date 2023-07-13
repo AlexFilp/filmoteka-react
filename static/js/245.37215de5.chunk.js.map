@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/245.37215de5.chunk.js","mappings":"yIAIA,UAJoB,WAClB,OAAOA,EAAAA,EAAAA,KAAA,MAAAC,SAAI,eACb,C","sources":["Pages/WatchedPage/WatchedPage.jsx"],"sourcesContent":["const WatchedPage = () => {\n  return <h1>WatchedPage</h1>;\n};\n\nexport default WatchedPage;\n"],"names":["_jsx","children"],"sourceRoot":""}
